@@ -26,7 +26,7 @@ const showImages = (images) => {
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
     div.innerHTML = `<img class= "img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" onmouseover=showPopularity(${image.id},${image.comments},${image.downloads},${image.favorites}) onmouseout=hidePopularity(${image.id}) alt="${image.tags}"> 
-    <div id="${image.id}" onclick=selectItem(event,"${image.webformatURL}") onmouseover=showPopularity(${image.id},${image.comments},${image.downloads},${image.favorites}) onmouseout=hidePopularity(${image.id})>
+    <div id="${image.id}" onmouseover=showPopularity(${image.id},${image.comments},${image.downloads},${image.favorites}) onmouseout=hidePopularity(${image.id})>
     </div>
     <div><i class="fas fa-heart"></i> ${image.likes} <i class="far fa-eye"></i> ${image.views}</div>`;
     gallery.appendChild(div);
