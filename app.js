@@ -28,17 +28,17 @@ const showImages = (images) => {
     div.innerHTML = `<img class= "img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" onmouseover=showPopularity(${image.id},${image.comments},${image.downloads},${image.favorites}) onmouseout=hidePopularity(${image.id}) alt="${image.tags}"> 
     <div id="${image.id}" onmouseover=showPopularity(${image.id},${image.comments},${image.downloads},${image.favorites}) onmouseout=hidePopularity(${image.id})>
     </div>
-    <div><i class="fas fa-heart"></i> ${image.likes} <i class="far fa-eye"></i> ${image.views}</div>`;
+    <div><i class="fas fa-heart"></i> ${image.likes} <i class="far fa-eye"></i> ${image.views}  <i class="fas fa-download"></i></i> ${image.downloads} </div>`;
     gallery.appendChild(div);
   })
   
 }
-//<i class="fas fa-comments"></i> <i class="fas fa-download"></i></i> 
+//<i class="fas fa-comments"></i> 
 //bonus: showing popularity (favorites and downloads) by hovering the image and hide them
 const showPopularity = (id,comments,downloads,favorites) =>{
   const div = document.getElementById(id);
   div.className = "overlay";
-  div.innerText = `Comments: ${comments} \nDownloads: ${downloads} \nFavourites: ${favorites}`;
+  div.innerText = `Comments: ${comments} \n Favourites: ${favorites}`;
 }
 const hidePopularity = (id) =>{
   const div = document.getElementById(id);
